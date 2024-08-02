@@ -1,4 +1,4 @@
--- Original script https://github.com/Habnone/Lmaobox-Luas/blob/main/random_sentence.lua
+-- Based on https://github.com/Habnone/Lmaobox-Luas/blob/main/random_sentence.lua
 -- The idea by lnx00 in thread https://lmaobox.net/forum/v/discussion/24261/realese-random-sentence-lua/p1
 -- Preview https://imgur.com/a/qSuZiYg
 
@@ -116,7 +116,7 @@ local words = {"drunk", "men", "fucker", "is", "are", "I", "them", "if", "after"
     end
     
     -- List of blacklisted words
-    local blacklist = {"Dexter", "bot", "f1", "f2", "kick", "aimbot", "wallhack", "walls", "hacking", "hack", "cheat", "cheating", "cheater", "sus", "bots", "kicking", "botting"}
+    local blacklist = {"bot", "f1", "f2", "kick", "aimbot", "wallhack", "walls", "hacking", "hack", "cheat", "cheating", "cheater", "sus", "bots", "kicking", "botting"}
     
     -- Function to split a string into words
     local function splitWords(str)
@@ -140,26 +140,28 @@ local words = {"drunk", "men", "fucker", "is", "are", "I", "them", "if", "after"
         end
     end
     
+    -- Reimagined function without neccesarry stuff
     local function myCoolMessageHook(msg)
         if msg:GetID() == SayText2 then
-            msg:SetCurBit(8) -- skip 2 bytes of padding
+            msg:SetCurBit(8)
+            -- Reading chat type, player name, and message
             local chatType = msg:ReadString(256)
             local playerName = msg:ReadString(256)
             local message = msg:ReadString(256)
+            -- Generating random sentence
             local randomSentence = generateRandomSentence()
             local start_timer = false
-            if message ~= "TF_CHAT_ALL" and playerName ~= "Schizophrenia Gaming" then
-                print(message)
-                local rnd = math.random()
-                if rnd > 0.5 then
-                    client.ChatSay(string.lower(randomSentence))
-                end
-                local newWords = splitWords(message)
-                updateWordsTable(words, newWords)
-                buildTable()
+            print(message)
+            local rnd = math.random()
+            if rnd > 0.5 then
+                client.ChatSay(string.lower(randomSentence))
             end
+            local newWords = splitWords(message)
+            updateWordsTable(words, newWords)
+            buildTable()
         end
     end
+    
     
     callbacks.Register("DispatchUserMessage", myCoolMessageHook)
     
