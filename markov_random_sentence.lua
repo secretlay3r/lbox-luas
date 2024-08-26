@@ -175,4 +175,3 @@ local words = {"drunk", "men", "fucker", "is", "are", "I", "them", "if", "after"
     
     -- Register the sendMessage callback
     callbacks.Register("CreateMove", "messagesend", sendMessage)
-    
