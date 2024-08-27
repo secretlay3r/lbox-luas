@@ -1,4 +1,4 @@
--- Requires alib library (https://github.com/uosq/lbox-alib)
+-- Requires alib (ver. 0.34) library (https://github.com/uosq/lbox-alib/blob/ce471fba810c8d33767aa3ec0249f7871e6d7e89/alib.lua)
 -- Based on https://github.com/Muqa1/Muqa-LBOX-pastas/blob/main/Binds.lua
 -- Preview https://imgur.com/a/Mwa4yQU
 
