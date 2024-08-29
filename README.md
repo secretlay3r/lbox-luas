@@ -9,5 +9,3 @@ My lua files for Lmaobox
 [Gold Players](gold_players.lua) | Replaces the default texture of mercs with muzzleflash to make them look like gold  
 [Binds Alib](binds_alib.lua) | Rewritten version of Muqa's [binds.lua](https://github.com/Muqa1/Muqa-LBOX-pastas/blob/main/Binds.lua) using [Alib](https://github.com/uosq/lbox-alib)
 [Clock](clock.lua) | A simple clock on the screen  
-[Snake Game](snake.lua) | Snake Game implementation in Lua, controls are WASD and R 
-[Game of Life](game_of_life.lua) | Conway's Game of Life implementation in Lua
